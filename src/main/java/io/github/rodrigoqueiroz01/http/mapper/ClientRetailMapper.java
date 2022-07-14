@@ -4,11 +4,9 @@ import io.github.rodrigoqueiroz01.http.dto.request.ClientRetailRequest;
 import io.github.rodrigoqueiroz01.http.dto.response.ClientRetailResponse;
 import io.github.rodrigoqueiroz01.model.ClientRetailModel;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import static java.util.Objects.isNull;
 
 @Component
