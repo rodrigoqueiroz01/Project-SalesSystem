@@ -24,22 +24,13 @@ public class ClientModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name = "full_name")
     private String fullName;
 
-    private String cpf;
+    private String genre;
 
-    @Column(name = "birth_date")
     private String birthDate;
 
-    @Column(name = "zip_code")
-    private String zipCode;
-
-    private String address;
-
-    private Integer number;
-
-    private String district;
+    private String cpf;
 
     private String telephone;
 

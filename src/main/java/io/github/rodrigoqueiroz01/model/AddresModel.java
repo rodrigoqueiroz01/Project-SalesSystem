@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.UUID;
 
 @Builder
@@ -15,20 +14,23 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "product", schema = "public")
-public class ProductModel implements Serializable {
+@Table(name = "address", schema = "public")
+public class AddresModel implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersion = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    private String description;
+    @Column(name = "zip_code")
+    private String zipCode;
 
-    private BigDecimal preco;
+    private String address;
 
-    private Integer quantidadeEstoque;
+    private Integer number;
+
+    private String district;
 
 }

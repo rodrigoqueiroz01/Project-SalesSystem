@@ -16,17 +16,11 @@ public class ClientResponse {
 
     private String fullName;
 
-    private String cpf;
+    private String genre;
 
     private String birthDate;
 
-    private String zipCode;
-
-    private String address;
-
-    private Integer number;
-
-    private String district;
+    private String cpf;
 
     private String telephone;
 

@@ -11,28 +11,18 @@ public class ClientRequest {
     @NotNull(message = "O nome do cliente não foi informado.")
     private String fullName;
 
-    @NotNull(message = "O CPF do cliente não foi informado.")
-    private String cpf;
+    private String genre;
 
-    @NotNull(message = "A data de nascimento do cliente não foi informado.")
+    @NotNull(message = "A data de nascimento não foi informada.")
     private String birthDate;
 
-    @NotNull(message = "O CEP do cliente não foi encontrado.")
-    private String zipCode;
+    @NotNull(message = "O CPF não foi informado.")
+    private String cpf;
 
-    @NotNull(message = "O endereço do cliente não foi informado.")
-    private String address;
-
-    @NotNull(message = "O número não foi informado.")
-    private Integer number;
-
-    @NotNull(message = "O bairro não foi informado.")
-    private String district;
-
-    @NotNull(message = "O telefone do cliente não foi informado.")
+    @NotNull(message = "O telefone não foi informado.")
     private String telephone;
 
-    @NotNull(message = "O email do cliente não foi informado.")
+    @NotNull(message = "O email não foi informado.")
     private String email;
 
 }
