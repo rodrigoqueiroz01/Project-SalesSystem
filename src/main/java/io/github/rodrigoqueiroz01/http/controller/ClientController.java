@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/vendas")
+@RequestMapping("/sales")
 @AllArgsConstructor
 @Validated
 public class ClientController {
