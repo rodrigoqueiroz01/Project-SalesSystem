@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-public class ClientRetailRequest {
+public class ClientRequest {
 
     @NotNull(message = "O nome do cliente não foi informado.")
     private String fullName;

@@ -1,8 +1,8 @@
 package io.github.rodrigoqueiroz01.http.mapper;
 
-import io.github.rodrigoqueiroz01.http.dto.request.ClientRetailRequest;
-import io.github.rodrigoqueiroz01.http.dto.response.ClientRetailResponse;
-import io.github.rodrigoqueiroz01.model.ClientRetailModel;
+import io.github.rodrigoqueiroz01.http.dto.request.ClientRequest;
+import io.github.rodrigoqueiroz01.http.dto.response.ClientResponse;
+import io.github.rodrigoqueiroz01.model.ClientModel;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +10,10 @@ import java.util.stream.Collectors;
 import static java.util.Objects.isNull;
 
 @Component
-public class ClientRetailMapper {
+public class ClientMapper {
 
-    public static ClientRetailModel toModel(ClientRetailRequest request) {
-        return ClientRetailModel
+    public static ClientModel toModel(ClientRequest request) {
+        return ClientModel
                 .builder()
                 .fullName(request.getFullName())
                 .cpf(request.getCpf())
@@ -27,8 +27,8 @@ public class ClientRetailMapper {
                 .build();
     }
 
-    public static ClientRetailResponse toResponse(ClientRetailModel model) {
-        return ClientRetailResponse
+    public static ClientResponse toResponse(ClientModel model) {
+        return ClientResponse
                 .builder()
                 .id(model.getId())
                 .fullName(model.getFullName())
@@ -43,13 +43,13 @@ public class ClientRetailMapper {
                 .build();
     }
 
-    public static List<ClientRetailResponse> toResponseList(List<ClientRetailModel> clientRetailModelList) {
-        if (isNull(clientRetailModelList) || clientRetailModelList.isEmpty()) {
+    public static List<ClientResponse> toResponseList(List<ClientModel> clientModelList) {
+        if (isNull(clientModelList) || clientModelList.isEmpty()) {
             return new ArrayList<>();
         } else {
-            return clientRetailModelList
+            return clientModelList
                     .stream()
-                    .map(ClientRetailMapper::toResponse)
+                    .map(ClientMapper::toResponse)
                     .collect(Collectors.toList());
         }
     }

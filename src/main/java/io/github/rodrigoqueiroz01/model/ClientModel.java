@@ -15,7 +15,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(name = "client", schema = "public")
-public class ClientRetailModel implements Serializable {
+public class ClientModel implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
