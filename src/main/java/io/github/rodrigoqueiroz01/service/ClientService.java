@@ -12,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class ClientService {
 
-    private ClientRepository clientRepository;
+    private final ClientRepository clientRepository;
 
     public ClientModel save(ClientModel clientModel) {
         return clientRepository.save(clientModel);
