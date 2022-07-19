@@ -14,30 +14,30 @@ public class ClientService {
 
     private final ClientRepository clientRepository;
 
-    public ClientModel save(ClientModel clientModel) {
+    public ClientModel create(ClientModel clientModel) {
         return clientRepository.save(clientModel);
     }
 
-    public ClientModel findById(UUID id) {
+    public ClientModel readById(UUID id) {
         return clientRepository.findById(id)
-                .orElseThrow(() -> new NoResultException("Cliente de varejo inválido."));
+                .orElseThrow(() -> new NoResultException("Cliente inválido."));
     }
 
-    public List<ClientModel> findAll() {
+    public List<ClientModel> readAll() {
         return clientRepository.findAll();
     }
 
     public ClientModel update(ClientModel clientModel, UUID id) {
         clientRepository.findById(id)
-                .orElseThrow(() -> new NoResultException("Cliente de varejo inválido."));
+                .orElseThrow(() -> new NoResultException("Cliente inválido."));
         clientModel.setId(id);
         return clientModel;
     }
 
     public UUID delete(UUID id) {
-        ClientModel clientRetail = clientRepository.findById(id)
-                .orElseThrow(() -> new NoResultException("Cliente de varejo inválido."));
-        clientRepository.delete(clientRetail);
+        var clientModel = clientRepository.findById(id)
+                .orElseThrow(() -> new NoResultException("Cliente inválido."));
+        clientRepository.delete(clientModel);
         return id;
     }
 

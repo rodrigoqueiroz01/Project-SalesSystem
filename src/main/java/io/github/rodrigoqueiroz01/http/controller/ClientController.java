@@ -20,33 +20,33 @@ public class ClientController {
     private final ClientService clientService;
 
     @PostMapping
-    public ResponseEntity<ClientResponse> save(@RequestBody ClientRequest clientRequest) {
+    public ResponseEntity<ClientResponse> create(@RequestBody ClientRequest clientRequest) {
         return ResponseEntity.ok()
-                .body(ClientMapper.toResponse(clientService.save(ClientMapper.toModel(clientRequest))));
+                .body(ClientMapper.toResponse(clientService.create(ClientMapper.toModel(clientRequest))));
     }
 
-    @GetMapping("/{clientRetailId}")
-    public ResponseEntity<ClientResponse> findById(@PathVariable String clientRetailId) {
+    @GetMapping("/{clientId}")
+    public ResponseEntity<ClientResponse> readById(@PathVariable String clientId) {
         return ResponseEntity.ok()
-                .body(ClientMapper.toResponse(clientService.findById(UUID.fromString(clientRetailId))));
+                .body(ClientMapper.toResponse(clientService.readById(UUID.fromString(clientId))));
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<ClientResponse>> findALl() {
+    public ResponseEntity<List<ClientResponse>> readALl() {
         return ResponseEntity.ok()
-                .body(ClientMapper.toResponseList(clientService.findAll()));
+                .body(ClientMapper.toResponseList(clientService.readAll()));
     }
 
-    @PutMapping("/{clientRetailId}")
-    public ResponseEntity<ClientResponse> update(@PathVariable String clientRetailId, @RequestBody ClientRequest clientRequest) {
+    @PutMapping("/{clientId}")
+    public ResponseEntity<ClientResponse> update(@PathVariable String clientId, @RequestBody ClientRequest clientRequest) {
         return ResponseEntity.ok()
-                .body(ClientMapper.toResponse(clientService.update(ClientMapper.toModel(clientRequest), UUID.fromString(clientRetailId))));
+                .body(ClientMapper.toResponse(clientService.update(ClientMapper.toModel(clientRequest), UUID.fromString(clientId))));
     }
 
-    @DeleteMapping("/{clientRetailId}")
-    public ResponseEntity<UUID> delete(@PathVariable String clientRetailId) {
+    @DeleteMapping("/{clientId}")
+    public ResponseEntity<UUID> delete(@PathVariable String clientId) {
         return ResponseEntity.ok()
-                .body(clientService.delete(UUID.fromString(clientRetailId)));
+                .body(clientService.delete(UUID.fromString(clientId)));
     }
 
 }

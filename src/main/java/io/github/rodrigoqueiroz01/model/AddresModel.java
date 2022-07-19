@@ -24,13 +24,9 @@ public class AddresModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name = "zip_code")
     private String zipCode;
-
     private String address;
-
     private Integer number;
-
     private String district;
 
 }

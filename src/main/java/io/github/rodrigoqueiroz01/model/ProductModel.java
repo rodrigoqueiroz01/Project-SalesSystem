@@ -26,9 +26,7 @@ public class ProductModel implements Serializable {
     private UUID id;
 
     private String description;
-
-    private BigDecimal preco;
-
-    private Integer quantidadeEstoque;
+    private BigDecimal price;
+    private Integer quantityStock;
 
 }

@@ -25,15 +25,10 @@ public class ClientModel implements Serializable {
     private UUID id;
 
     private String fullName;
-
     private String genre;
-
     private String birthDate;
-
     private String cpf;
-
     private String telephone;
-
     private String email;
 
 }
